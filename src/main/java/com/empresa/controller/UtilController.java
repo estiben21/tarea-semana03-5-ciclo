@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.empresa.entity.Deporte;
-import com.empresa.service.DeporteService;
+import com.empresa.entity.Pais;
+import com.empresa.service.PaisService;
 import com.empresa.util.AppSettings;
 
 @RestController
@@ -20,12 +20,12 @@ import com.empresa.util.AppSettings;
 public class UtilController {
 
 	@Autowired
-	private DeporteService  deporteService;
+	private PaisService  paisService;
 
-	@GetMapping("/deporte")
+	@GetMapping("/pais")
 	@ResponseBody
-	public ResponseEntity<List<Deporte>> listaDeporte(){
-		List<Deporte> lista = deporteService.listaDeporte();
+	public ResponseEntity<List<Pais>> listaPais(){
+		List<Pais> lista = paisService.listaPais();
 		return ResponseEntity.ok(lista);
 	}
 	
